@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+@*<h2>Cheque Application</h2>
+  <table>
+        <tr>
+            <th>
+                 <input type="button" value="Using REST Web Service" onclick="location.href='@Url.Action("RESTBilling", "Home")'" />
+            </th>
+            <th>
+                <input type="button" value="Using SOAP Web Service" onclick="location.href='@Url.Action("SOAPBilling", "Home")'" />
+            </th>
+        </tr>
+   </table>*@
+
+<div class="flex-container">
+<header>
+  <h1>Cheque Application</h1>
+</header>
+
+<nav class="nav">
+    <ul>
+         <li>
+            <input type="button" value="Using REST Web Service" onclick="location.href='@Url.Action("RESTBilling", "Home")'" />
+         </li>
+        <li>
+            <input type="button" value="Using SOAP Web Service" onclick="location.href='@Url.Action("SOAPBilling", "Home")'" />
+        </li>
+    </ul>
+</nav>
+
+<article class="article">
+
+</article>
+
+<footer>Copyright &copy; www.virtusaPolaris.com</footer>
+</div>
+
+    

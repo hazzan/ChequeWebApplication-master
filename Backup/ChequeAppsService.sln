@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChequeRESTService", "ChequeRESTService\ChequeRESTService.csproj", "{86984EC2-6AAA-4718-8CDE-672F605AF870}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChequeBusinessData", "ChequeBusinessServer\ChequeBusinessData.csproj", "{9AC7AC76-D3C2-431C-AF22-C86918041248}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChequeClient", "ChequeClient\ChequeClient.csproj", "{E9AD1FD7-175D-438A-8F4B-5E0B6029F853}"
+	ProjectSection(ProjectDependencies) = postProject
+		{79150D00-93A6-41CD-8B52-2DD5A36F7538} = {79150D00-93A6-41CD-8B52-2DD5A36F7538}
+		{86984EC2-6AAA-4718-8CDE-672F605AF870} = {86984EC2-6AAA-4718-8CDE-672F605AF870}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChequeSOAPWebService", "SOAPWebService\ChequeSOAPWebService.csproj", "{79150D00-93A6-41CD-8B52-2DD5A36F7538}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChequeConsumer", "ChequeConsumer\ChequeConsumer.csproj", "{2D8F04CE-66CC-4DBE-8FEA-44FE2CDB66EF}"
+	ProjectSection(ProjectDependencies) = postProject
+		{86984EC2-6AAA-4718-8CDE-672F605AF870} = {86984EC2-6AAA-4718-8CDE-672F605AF870}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{86984EC2-6AAA-4718-8CDE-672F605AF870}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86984EC2-6AAA-4718-8CDE-672F605AF870}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86984EC2-6AAA-4718-8CDE-672F605AF870}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86984EC2-6AAA-4718-8CDE-672F605AF870}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AC7AC76-D3C2-431C-AF22-C86918041248}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AC7AC76-D3C2-431C-AF22-C86918041248}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AC7AC76-D3C2-431C-AF22-C86918041248}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AC7AC76-D3C2-431C-AF22-C86918041248}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9AD1FD7-175D-438A-8F4B-5E0B6029F853}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9AD1FD7-175D-438A-8F4B-5E0B6029F853}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9AD1FD7-175D-438A-8F4B-5E0B6029F853}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9AD1FD7-175D-438A-8F4B-5E0B6029F853}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79150D00-93A6-41CD-8B52-2DD5A36F7538}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79150D00-93A6-41CD-8B52-2DD5A36F7538}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79150D00-93A6-41CD-8B52-2DD5A36F7538}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79150D00-93A6-41CD-8B52-2DD5A36F7538}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D8F04CE-66CC-4DBE-8FEA-44FE2CDB66EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D8F04CE-66CC-4DBE-8FEA-44FE2CDB66EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D8F04CE-66CC-4DBE-8FEA-44FE2CDB66EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D8F04CE-66CC-4DBE-8FEA-44FE2CDB66EF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

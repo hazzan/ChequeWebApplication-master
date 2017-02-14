@@ -1,0 +1,27 @@
+C:\Deployments\2015-07-30\ChequeAppsService\SOAPWebService\bin\ChequeSOAPWebService.dll
+C:\Deployments\2015-07-30\ChequeAppsService\SOAPWebService\bin\ChequeSOAPWebService.pdb
+C:\Deployments\2015-07-30\ChequeAppsService\SOAPWebService\bin\ChequeBusinessData.dll
+C:\Deployments\2015-07-30\ChequeAppsService\SOAPWebService\bin\ChequeConsumer.dll
+C:\Deployments\2015-07-30\ChequeAppsService\SOAPWebService\bin\ChequeBusinessData.pdb
+C:\Deployments\2015-07-30\ChequeAppsService\SOAPWebService\bin\ChequeConsumer.pdb
+C:\Deployments\2015-07-30\ChequeAppsService\SOAPWebService\obj\Debug\ChequeSOAPWebService.csprojResolveAssemblyReference.cache
+C:\Deployments\2015-07-30\ChequeAppsService\SOAPWebService\obj\Debug\ChequeSOAPWebService.dll
+C:\Deployments\2015-07-30\ChequeAppsService\SOAPWebService\obj\Debug\ChequeSOAPWebService.pdb
+C:\Users\sbdasanayake\Downloads\ChequeWebApplication-master (1)\ChequeWebApplication-master\SOAPWebService\bin\ChequeSOAPWebService.dll
+C:\Users\sbdasanayake\Downloads\ChequeWebApplication-master (1)\ChequeWebApplication-master\SOAPWebService\bin\ChequeSOAPWebService.pdb
+C:\Users\sbdasanayake\Downloads\ChequeWebApplication-master (1)\ChequeWebApplication-master\SOAPWebService\bin\ChequeBusinessData.dll
+C:\Users\sbdasanayake\Downloads\ChequeWebApplication-master (1)\ChequeWebApplication-master\SOAPWebService\bin\ChequeConsumer.dll
+C:\Users\sbdasanayake\Downloads\ChequeWebApplication-master (1)\ChequeWebApplication-master\SOAPWebService\bin\ChequeBusinessData.pdb
+C:\Users\sbdasanayake\Downloads\ChequeWebApplication-master (1)\ChequeWebApplication-master\SOAPWebService\bin\ChequeConsumer.pdb
+C:\Users\sbdasanayake\Downloads\ChequeWebApplication-master (1)\ChequeWebApplication-master\SOAPWebService\obj\Debug\ChequeSOAPWebService.csprojResolveAssemblyReference.cache
+C:\Users\sbdasanayake\Downloads\ChequeWebApplication-master (1)\ChequeWebApplication-master\SOAPWebService\obj\Debug\ChequeSOAPWebService.dll
+C:\Users\sbdasanayake\Downloads\ChequeWebApplication-master (1)\ChequeWebApplication-master\SOAPWebService\obj\Debug\ChequeSOAPWebService.pdb
+C:\Projects\Micros\ChequeWebApplication\ChequeWebApplication-master (1)\ChequeWebApplication-master\SOAPWebService\bin\ChequeSOAPWebService.dll
+C:\Projects\Micros\ChequeWebApplication\ChequeWebApplication-master (1)\ChequeWebApplication-master\SOAPWebService\bin\ChequeSOAPWebService.pdb
+C:\Projects\Micros\ChequeWebApplication\ChequeWebApplication-master (1)\ChequeWebApplication-master\SOAPWebService\bin\ChequeBusinessData.dll
+C:\Projects\Micros\ChequeWebApplication\ChequeWebApplication-master (1)\ChequeWebApplication-master\SOAPWebService\bin\ChequeConsumer.dll
+C:\Projects\Micros\ChequeWebApplication\ChequeWebApplication-master (1)\ChequeWebApplication-master\SOAPWebService\bin\ChequeBusinessData.pdb
+C:\Projects\Micros\ChequeWebApplication\ChequeWebApplication-master (1)\ChequeWebApplication-master\SOAPWebService\bin\ChequeConsumer.pdb
+C:\Projects\Micros\ChequeWebApplication\ChequeWebApplication-master (1)\ChequeWebApplication-master\SOAPWebService\obj\Debug\ChequeSOAPWebService.csprojResolveAssemblyReference.cache
+C:\Projects\Micros\ChequeWebApplication\ChequeWebApplication-master (1)\ChequeWebApplication-master\SOAPWebService\obj\Debug\ChequeSOAPWebService.dll
+C:\Projects\Micros\ChequeWebApplication\ChequeWebApplication-master (1)\ChequeWebApplication-master\SOAPWebService\obj\Debug\ChequeSOAPWebService.pdb

@@ -1,0 +1,4 @@
+C:\Deployments\2015-07-30\ChequeAppsService\ChequeBusinessServer\bin\Debug\ChequeBusinessServer.dll
+C:\Deployments\2015-07-30\ChequeAppsService\ChequeBusinessServer\bin\Debug\ChequeBusinessServer.pdb
+C:\Deployments\2015-07-30\ChequeAppsService\ChequeBusinessServer\obj\Debug\ChequeBusinessServer.dll
+C:\Deployments\2015-07-30\ChequeAppsService\ChequeBusinessServer\obj\Debug\ChequeBusinessServer.pdb

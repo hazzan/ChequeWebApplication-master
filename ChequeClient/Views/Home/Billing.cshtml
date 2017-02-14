@@ -1,0 +1,246 @@
+﻿@model ChequeClient.Models.ChequeDetails
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="flex-container">
+<header>
+  <h1>Cheque Application</h1>
+</header>
+</div>
+@using (Html.BeginForm())
+{
+    <p><b>Cheque Number :</b> @Html.DisplayFor(m => m.Invoicenumber) </p>
+    <p><b>Cheque Date   :</b> @Html.DisplayFor(m => m.InvoiceDate)  </p>
+    <input type="button" value="Bill" id="btnBill" class="button" />
+    <input type="button" value="Go Back" id="btnHome" class="button"/>
+    <br />
+    <section class="container">
+      <div class="left-half">
+        <article>
+          <table id="leftTable">
+              <tr >
+                @Html.DisplayName("Menu Items")
+              </tr>
+                <tr>
+                    <th>
+                        @Html.DisplayName("Code")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Name")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Description")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Category")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Price")
+                    </th>
+                    <th></th>
+                </tr>
+
+        @foreach (var item in Model.ListOfMenu)
+        {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MenuName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MenuDescription)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Category)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+
+                    <td>
+                        <input type="button" value="Add to bill" class="addtoBill" id= />
+                    </td>
+                </tr>
+        }
+        </table>
+
+        </article>
+      </div>
+      <div class="right-half">
+        <article>
+             <table id="rightTable">
+              <tr >
+                @Html.DisplayName("Billed Items")
+              </tr>
+                <tr>
+                    <th>
+                        @Html.DisplayName("Code")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Name")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Description")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Category")
+                    </th>
+                    <th>
+                        @Html.DisplayName("Price")
+                    </th>
+                    <th></th>
+                </tr>
+
+        @foreach (var item in Model.SelectedMenuItem)
+        {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MenuName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MenuDescription)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Category)
+                    </td>
+                    <td>
+                        @Html.EditorFor(modelItem => item.Price)
+                    </td>
+                </tr>
+        }
+        </table>
+        <p><b>Total:</b> <label for="billTotal" style="vertical-align: middle">0.00</label></p>
+        </article>
+      </div>   
+      
+    </section>
+   
+    @Html.HiddenFor(m => m.Invoicenumber);
+    @Html.HiddenFor(m => m.InvoiceDate);
+    @Html.HiddenFor(m => m.RestOrSaop);
+}
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        $(".addtoBill").click(function () {
+            var leftTr = $(this).closest("tr").clone();
+            var addingRowId = leftTr[0].cells['0'].innerHTML;
+            var addingRowPrice = parseFloat(leftTr[0].cells['4'].innerHTML.trim());
+            var rowLength = $('#rightTable tr').length;
+            var duplicateItemArr = [];
+            leftTr[0].cells['5'].innerHTML = '<input class="removeBill" type="button" value="Remove from bill" onclick="deleteRow(this,' + addingRowId + ')">';
+            if (rowLength == 2) {
+                $('#rightTable tbody').append(leftTr);
+                $("label[for='billTotal']").html(addingRowPrice);
+                rowLength = $('#rightTable tr').length;
+            }
+            else if (rowLength >= 2) {
+                var rightTableRows = $("#rightTable tr");
+                rightTableRows.each(function () {
+                    var currentRow = $(this);
+                    if (currentRow.find("td:nth(0)").text().trim() != "") {
+                        if (currentRow.find("td:nth(0)").text().trim() == addingRowId.trim()) {
+                            duplicateItemArr.push(currentRow.find("td:nth(0)").text().trim());
+                        }
+                    }
+                });
+
+                if ($.inArray(addingRowId.trim(), duplicateItemArr) == -1) {
+                    $('#rightTable tbody').append(leftTr);
+                    var currentTotal = $("label[for='billTotal']").html();
+                    var finalTotal = increaseTotal(currentTotal, addingRowPrice)
+                    $("label[for='billTotal']").html(finalTotal);
+                }
+
+            }
+            else {
+                return false;
+            }
+        });
+        $("#btnBill").click(function () {
+            var itemsTableRows = $("#rightTable tr");
+            var allRowData = [];
+            itemsTableRows.each(function () {
+                var currentRow = $(this);
+                if (currentRow.find("td:nth(0)").text() != "") {
+                    menuName = currentRow.find("td:nth(1)").text();
+                    price = currentRow.find("td:nth(4)").text();
+                    category = currentRow.find("td:nth(3)").text();
+                    id = currentRow.find("td:nth(0)").text();
+                    allRowData.push({ MenuID: id.trim(), MenuName: menuName.trim(), Price: parseFloat(price.trim()), Category: category.trim() });
+                }
+
+            });
+
+            if (allRowData.length != 0) {
+                dataRows = JSON.stringify({
+                    'listBillingDetails': allRowData,
+                    'chequeDate': $("#InvoiceDate").val(),
+                    'chequeNo': $("#Invoicenumber").val(),
+                    'restOrSaop': $("#RestOrSaop").val()
+                });
+                $.ajax({
+                    contentType: 'application/json; charset=utf-8',
+                    url: '/Home/SaveBillingInformation',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: dataRows,
+                    success: function (data) {
+                        if (data.Result == "OK") {
+                            alert("The bill succussfully saved");
+                        }
+                        else {
+                            alert("Error has occured while bill save");
+                        }
+                    },
+                    error: function () {
+                    }
+                });
+            }
+
+
+        });
+
+        $("#btnHome").click(function () {
+            window.location.href = "/Home/Index";
+        });
+
+    });
+
+    function deleteRow(btn, Id) {
+        var rightTableRows = $("#rightTable tr");
+        var addingRowPrice = 0;
+        var allRowData = [];
+        rightTableRows.each(function () {
+            var currentRow = $(this);
+            if (currentRow.find("td:nth(0)").text().trim() == Id) {
+                currentRow.remove();
+                var currentTotal = $("label[for='billTotal']").html();
+                addingRowPrice = currentRow.find("td:nth(4)").text().trim();
+                debugger;
+                var finalTotal = decreaseTotal(currentTotal, addingRowPrice)
+                $("label[for='billTotal']").html(finalTotal);
+            }
+
+        });
+    };
+
+    function increaseTotal(current, next) {
+        var total = parseFloat(current) + parseFloat(next);
+        return parseFloat(total);
+    };
+
+    function decreaseTotal(current, next) {
+        var total = parseFloat(current) - parseFloat(next);
+        return parseFloat(total);
+    };
+</script>
