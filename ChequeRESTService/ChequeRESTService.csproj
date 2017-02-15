@@ -69,7 +69,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IRESTChequeService.cs" />
+    <Compile Include="Interface\IRESTChequeService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RESTChequeService.svc.cs">
       <DependentUpon>RESTChequeService.svc</DependentUpon>
@@ -83,6 +83,10 @@
     <ProjectReference Include="..\ChequeBusinessServer\ChequeBusinessData.csproj">
       <Project>{9AC7AC76-D3C2-431C-AF22-C86918041248}</Project>
       <Name>ChequeBusinessData</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ChequeServerEntityFramework\ChequeServerEntityFramework.csproj">
+      <Project>{D8526849-0014-4EC5-99AB-FA34560A5AA6}</Project>
+      <Name>ChequeServerEntityFramework</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

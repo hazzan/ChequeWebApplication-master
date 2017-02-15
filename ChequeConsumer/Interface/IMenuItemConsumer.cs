@@ -10,5 +10,7 @@ namespace ChequeConsumer.Interface
     {
         List<MenuItemDto> LoadMenuItem();
         string InsertChequeInfoByRest(List<BillingInformationDto> listBillingDto, DateTime chequeDate, string chequeNo);
+        List<MenuItemDto> LoadMenuItemByEF();
+        string InsertChequeInfoByRestByEF(List<BillingInformationDto> listBillingDto, DateTime chequeDate, string chequeNo); 
     }
 }

@@ -39,10 +39,10 @@ namespace ChequeConsumer
                 var menuItem = new MenuItemDto()
                 {
                     Id = item.Id,
-                    MenuName = item.MenuName,
-                    MenuDescription = item.MenuDescription,
+                    MENUNAME = item.MenuName,
+                    MENUDESCRIPTION = item.MenuDescription,
                     Price = item.Price,
-                    Category = item.Category
+                    MENUCATEGORY = item.Category
 
                 };
 

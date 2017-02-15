@@ -12,11 +12,11 @@ namespace ChequeConsumer.Dtos
         [DataMember]
         public long Id { get; set; }
         [DataMember]
-        public string MenuName { get; set; }
+        public string MENUNAME { get; set; }
         [DataMember]
-        public string MenuDescription { get; set; }
+        public string MENUDESCRIPTION { get; set; }
         [DataMember]
-        public string Category { get; set; }
+        public string MENUCATEGORY { get; set; }
         [DataMember]
         public decimal Price { get; set; }  
     }

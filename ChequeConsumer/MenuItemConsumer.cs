@@ -33,6 +33,62 @@ namespace ChequeConsumer
 
         public string InsertChequeInfoByRest(List<BillingInformationDto> listBillingDto, DateTime chequeDate, string chequeNo)   
         {
+            var billInfo = ConvertBillInformationToDto(listBillingDto, chequeDate, chequeNo);
+            using (WebClient wc = new WebClient())
+            {
+
+                MemoryStream ms = new MemoryStream();
+                DataContractJsonSerializer serializerToUplaod = new DataContractJsonSerializer(typeof(List<BillingInformation>));
+                serializerToUplaod.WriteObject(ms, billInfo);
+                wc.Headers["Content-type"] = "application/json";
+                wc.UploadData(string.Format(customerServiceUri, "/SaveMenuItem"), "POST", ms.ToArray());
+            }
+
+            return "success";
+        }
+
+        public List<MenuItemDto> LoadMenuItemByEF()
+        {
+            try
+            {
+                using (WebClient webProxy = new WebClient())
+                {
+                    string jsonData = webProxy.DownloadString(new Uri(string.Format(customerServiceUri, "/MenuItemByEF")));
+                    jsonData = jsonData.Replace(@"\", "");
+                    jsonData = jsonData.Substring(0, jsonData.Length - 2);
+                    if (jsonData.Length > 23)
+                    {
+                        jsonData = jsonData.Substring(23, jsonData.Length - 23);
+                    }
+                    var serializer = new JavaScriptSerializer();
+                    var objMenuItem = serializer.Deserialize<List<MenuItemDto>>(jsonData);
+                    return objMenuItem; 
+                }
+            }
+            catch (Exception)
+            {    
+                throw;
+            }
+        }
+
+        public string InsertChequeInfoByRestByEF(List<BillingInformationDto> listBillingDto, DateTime chequeDate, string chequeNo)
+        {
+            var billInfo = ConvertBillInformationToDto(listBillingDto, chequeDate, chequeNo);
+            using (WebClient wc = new WebClient())
+            {
+
+                MemoryStream ms = new MemoryStream();
+                DataContractJsonSerializer serializerToUplaod = new DataContractJsonSerializer(typeof(List<BillingInformation>));
+                serializerToUplaod.WriteObject(ms, billInfo);
+                wc.Headers["Content-type"] = "application/json";
+                wc.UploadData(string.Format(customerServiceUri, "/SaveMenuItemByEF"), "POST", ms.ToArray());
+            }
+           
+            return "success";
+        }
+
+        private static BillingInformation ConvertBillInformationToDto(List<BillingInformationDto> listBillingDto, DateTime chequeDate, string chequeNo)
+        {
             BillingInformation billInfo = new BillingInformation();
             billInfo.ChequeDate = chequeDate;
             billInfo.ChequeNo = chequeNo;
@@ -41,7 +97,7 @@ namespace ChequeConsumer
             {
                 foreach (var item in listBillingDto)
                 {
-                    MenuItem menuItem = new MenuItem() 
+                    MenuItem menuItem = new MenuItem()
                     {
                         Id = item.MenuID,
                         Category = item.Category,
@@ -51,23 +107,12 @@ namespace ChequeConsumer
                     billInfo.MenuItems.Add(menuItem);
                 }
 
-                using (WebClient wc = new WebClient())
-                {
-
-                    MemoryStream ms = new MemoryStream();
-                    DataContractJsonSerializer serializerToUplaod = new DataContractJsonSerializer(typeof(List<BillingInformation>));
-                    serializerToUplaod.WriteObject(ms, billInfo);
-                    wc.Headers["Content-type"] = "application/json";
-                    wc.UploadData(string.Format(customerServiceUri, "/SaveMenuItem"), "POST", ms.ToArray());
-                }
-            
+                return billInfo;
             }
             catch (Exception)
             {
-                
                 throw;
             }
-            return "success";
         }
     }
 }

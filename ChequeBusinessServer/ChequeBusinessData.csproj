@@ -48,7 +48,7 @@
     <Compile Include="DataConstants.cs" />
     <Compile Include="Entity\BillingInformation.cs" />
     <Compile Include="Entity\MenuItem.cs" />
-    <Compile Include="IChequeInformationConsum.cs" />
+    <Compile Include="Interface\IChequeInformationConsum.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

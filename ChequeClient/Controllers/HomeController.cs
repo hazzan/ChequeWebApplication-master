@@ -55,7 +55,7 @@ namespace ChequeClient.Controllers
                 }
                 if (restOrSaop == Constants.Rest)
                 {
-                    this.MenuItemConsumer.InsertChequeInfoByRest(listBillingInfo, chequeDate, chequeNo); ;
+                    this.MenuItemConsumer.InsertChequeInfoByRestByEF(listBillingInfo, chequeDate, chequeNo); ;
                 }
                 else
                 {
@@ -78,7 +78,7 @@ namespace ChequeClient.Controllers
             {
                 if (restOrSoap == Constants.Rest)
                 {
-                    listMenuItem = this.MenuItemConsumer.LoadMenuItem();
+                    listMenuItem = this.MenuItemConsumer.LoadMenuItemByEF();
                 }
                 else
                 {
