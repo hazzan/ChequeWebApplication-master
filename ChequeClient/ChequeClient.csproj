@@ -274,6 +274,10 @@
     <WCFMetadataStorage Include="Service References\SoapServiceRef\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ChequeCommon\ChequeCommon.csproj">
+      <Project>{DB81591B-46EC-4D57-9578-F0518C899BA5}</Project>
+      <Name>ChequeCommon</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ChequeConsumer\ChequeConsumer.csproj">
       <Project>{2D8F04CE-66CC-4DBE-8FEA-44FE2CDB66EF}</Project>
       <Name>ChequeConsumer</Name>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ChequeDbModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="ChequeDbModelStoreContainer">
+    <EntitySet Name="tblBilling" EntityType="ChequeDbModel.Store.tblBilling" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tblMENU" EntityType="ChequeDbModel.Store.tblMENU" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="tblBilling">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MENUID" Type="bigint" Nullable="false" />
+    <Property Name="PRICE" Type="decimal" />
+    <Property Name="CATEGORY" Type="nvarchar" MaxLength="50" />
+    <Property Name="CHEQUENO" Type="nvarchar" MaxLength="50" />
+    <Property Name="CHEQUEDATE" Type="date" />
+  </EntityType>
+  <EntityType Name="tblMENU">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MENUNAME" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="MENUDESCRIPTION" Type="nvarchar" MaxLength="200" />
+    <Property Name="MENUCATEGORY" Type="nvarchar" MaxLength="50" />
+    <Property Name="PRICE" Type="decimal" />
+  </EntityType>
+  <Function Name="insertBillDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MenuID" Type="bigint" Mode="In" />
+    <Parameter Name="Price" Type="decimal" Mode="In" />
+    <Parameter Name="Category" Type="nvarchar" Mode="In" />
+    <Parameter Name="ChequeNo" Type="nvarchar" Mode="In" />
+    <Parameter Name="ChequeDate" Type="date" Mode="In" />
+  </Function>
+</Schema>

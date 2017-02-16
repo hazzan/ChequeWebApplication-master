@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ChequeDbModelStoreContainer" CdmEntityContainer="ChequeDbEntities">
+    <EntitySetMapping Name="BillingInformations">
+      <EntityTypeMapping TypeName="ChequeDbModel.BillingInformation">
+        <MappingFragment StoreEntitySet="tblBilling">
+          <ScalarProperty Name="CHEQUEDATE" ColumnName="CHEQUEDATE" />
+          <ScalarProperty Name="CHEQUENO" ColumnName="CHEQUENO" />
+          <ScalarProperty Name="CATEGORY" ColumnName="CATEGORY" />
+          <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+          <ScalarProperty Name="MENUID" ColumnName="MENUID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MenuItems">
+      <EntityTypeMapping TypeName="ChequeDbModel.MenuItem">
+        <MappingFragment StoreEntitySet="tblMENU">
+          <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+          <ScalarProperty Name="MENUCATEGORY" ColumnName="MENUCATEGORY" />
+          <ScalarProperty Name="MENUDESCRIPTION" ColumnName="MENUDESCRIPTION" />
+          <ScalarProperty Name="MENUNAME" ColumnName="MENUNAME" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

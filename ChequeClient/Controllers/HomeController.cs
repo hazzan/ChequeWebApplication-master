@@ -7,6 +7,7 @@ using ChequeConsumer;
 using ChequeClient.Models;
 using ChequeConsumer.Dtos;
 using ChequeConsumer.Interface;
+using ChequeCommon;
 
 namespace ChequeClient.Controllers
 {
@@ -25,15 +26,33 @@ namespace ChequeClient.Controllers
 
         public ActionResult RESTBilling() 
         {
-            var chequeModel = ConvertoChequeModel(Constants.Rest);
-            return View(Constants.BillingView, chequeModel);
+            try
+            {
+                var chequeModel = ConvertoChequeModel(Constants.Rest);
+                return View(Constants.BillingView, chequeModel);
+                
+            }
+            catch (Exception)
+            {
+                LogProvider.Log(this.GetType(), LogLevel.Error, "Error has orrued when loading Billing by WCF REST");
+                throw;
+            }
         }
 
 
         public ActionResult SOAPBilling() 
         {
-            var chequeModel = ConvertoChequeModel(Constants.Soap);
-            return View(Constants.BillingView, chequeModel);
+            try
+            {
+                var chequeModel = ConvertoChequeModel(Constants.Soap);
+                return View(Constants.BillingView, chequeModel);
+            }
+            catch (Exception)
+            {
+                LogProvider.Log(this.GetType(), LogLevel.Error, "Error has orrued when loading Billing by WCF SOAP");
+                throw;
+            }
+           
         }
 
         public ActionResult SaveBillingInformation(List<BillingDetails> listBillingDetails, DateTime chequeDate, string chequeNo, string restOrSaop)
@@ -65,6 +84,7 @@ namespace ChequeClient.Controllers
             }
             catch (Exception)
             {
+                LogProvider.Log(this.GetType(), LogLevel.Error, "Error has orrued when save the bill!");
                 return Json(new { Result = Constants.JsonResultError });
             }           
         }

@@ -8,3 +8,8 @@ C:\Users\sbdasanayake\Downloads\ChequeWebApplication-master (1)\ChequeWebApplica
 C:\Users\sbdasanayake\Downloads\ChequeWebApplication-master (1)\ChequeWebApplication-master\ChequeBusinessServer\bin\Debug\ChequeBusinessData.pdb
 C:\Users\sbdasanayake\Downloads\ChequeWebApplication-master (1)\ChequeWebApplication-master\ChequeBusinessServer\obj\Debug\ChequeBusinessData.dll
 C:\Users\sbdasanayake\Downloads\ChequeWebApplication-master (1)\ChequeWebApplication-master\ChequeBusinessServer\obj\Debug\ChequeBusinessData.pdb
+C:\Projects\Micros\ChequeWebApplication\ChequeWebApplication-master (1)\ChequeWebApplication-master\ChequeBusinessServer\bin\Debug\ChequeBusinessData.dll.config
+C:\Projects\Micros\ChequeWebApplication\ChequeWebApplication-master (1)\ChequeWebApplication-master\ChequeBusinessServer\bin\Debug\ChequeBusinessData.dll
+C:\Projects\Micros\ChequeWebApplication\ChequeWebApplication-master (1)\ChequeWebApplication-master\ChequeBusinessServer\bin\Debug\ChequeBusinessData.pdb
+C:\Projects\Micros\ChequeWebApplication\ChequeWebApplication-master (1)\ChequeWebApplication-master\ChequeBusinessServer\obj\Debug\ChequeBusinessData.dll
+C:\Projects\Micros\ChequeWebApplication\ChequeWebApplication-master (1)\ChequeWebApplication-master\ChequeBusinessServer\obj\Debug\ChequeBusinessData.pdb
